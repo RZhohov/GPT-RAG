@@ -27,10 +27,12 @@ resource newAccount 'Microsoft.CognitiveServices/accounts@2024-10-01' = if (!aiS
   location: location
   tags: tags
   kind: kind
+  identity: { type: 'SystemAssigned' } // Added to comply with policy
   properties: {
     customSubDomainName: customSubDomainName
     publicNetworkAccess: publicNetworkAccess
-    disableLocalAuth: true //policy
+    disableLocalAuth: true // Added to comply with policy
+    restrictOutboundNetworkAccess: true // Added to comply with policy
   }
   sku: sku
 }

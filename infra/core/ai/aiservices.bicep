@@ -12,7 +12,7 @@ param keyVaultName string
 param customSubDomainName string = name
 param deployments array = []
 param kind string = 'OpenAI'
-param publicNetworkAccess string = 'Enabled'
+param publicNetworkAccess string = 'Disabled'
 param sku object = {
   name: 'S0'
 }
@@ -30,6 +30,7 @@ resource newAccount 'Microsoft.CognitiveServices/accounts@2024-10-01' = if (!aiS
   properties: {
     customSubDomainName: customSubDomainName
     publicNetworkAccess: publicNetworkAccess
+    disableLocalAuth: true //policy
   }
   sku: sku
 }

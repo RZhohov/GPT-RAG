@@ -32,7 +32,7 @@ resource newSearch 'Microsoft.Search/searchServices@2021-04-01-preview' = if (!a
   }
   properties: {
     authOptions: authOptions
-    disableLocalAuth: false
+    disableLocalAuth: true //policy
     disabledDataExfiltrationOptions: []
     encryptionWithCmk: {
       enforcement: 'Unspecified'

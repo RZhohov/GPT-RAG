@@ -103,6 +103,7 @@ resource newAccount 'Microsoft.DocumentDB/databaseAccounts@2022-05-15' = if (!co
     enableAutomaticFailover: systemManagedFailover
     publicNetworkAccess: publicNetworkAccess
     enableAnalyticalStorage: true
+    disableLocalAuth: true  // Add this line to disable local authentication
   }
 }
 

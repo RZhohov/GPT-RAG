@@ -66,7 +66,7 @@ resource keyVaultSecret 'Microsoft.KeyVault/vaults/secrets@2022-07-01' =  [for s
       nbf: 0
     }
     contentType: 'string'
-    value:  *PLACEHODLER' // aiServicesReuse ? existingAccount.listKeys().key1 : newAccount.listKeys().key1
+    value:  'PLACEHODLER' // aiServicesReuse ? existingAccount.listKeys().key1 : newAccount.listKeys().key1
   }
 }]
 

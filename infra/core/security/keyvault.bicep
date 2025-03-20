@@ -27,14 +27,15 @@ resource newKeyVault 'Microsoft.KeyVault/vaults@2022-07-01' = if (!keyVaultReuse
     sku: { family: 'A', name: 'standard' }
     enableSoftDelete: true
     publicNetworkAccess: publicNetworkAccess
-    enablePurgeProtection: true    
-    accessPolicies: !empty(principalId) ? [
-      {
-        objectId: principalId
-        permissions: { secrets: [ 'get', 'list', 'set'] }
-        tenantId: subscription().tenantId
-      }
-    ] : []
+    enablePurgeProtection: true
+    enableRbacAuthorization: true 
+//    accessPolicies: !empty(principalId) ? [
+//      {
+//        objectId: principalId
+//        permissions: { secrets: [ 'get', 'list', 'set'] }
+//        tenantId: subscription().tenantId
+//      }
+//    ] : []
   }
 }
 

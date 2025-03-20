@@ -8,9 +8,9 @@ param deployStorageAccount bool = true
 @allowed([ 'Hot', 'Cool', 'Premium' ])
 param accessTier string = 'Hot'
 param allowBlobPublicAccess bool = false
-param allowCrossTenantReplication bool = true
+param allowCrossTenantReplication bool = false
 param allowSharedKeyAccess bool = false
-param defaultToOAuthAuthentication bool = false
+param defaultToOAuthAuthentication bool = true
 param deleteRetentionPolicy object = {}
 @allowed([ 'AzureDnsZone', 'Standard' ])
 param dnsEndpointType string = 'Standard'
